@@ -1,0 +1,687 @@
+
+//<МИКСИНЫ>===============================================================================================
+@mixin anim($time,$delay){-webkit-transition: all $time ease $delay;-moz-transition: all $time ease $delay;-ms-transition: all $time ease $delay;-o-transition: all $time ease $delay;transition: all $time ease $delay;}
+@mixin anim_cubic($time, $delay) {-webkit-transition:all $time cubic-bezier(0.68,-0.55,0.265,1.55) $delay;-moz-transition:all $time cubic-bezier(0.68,-0.55,0.265,1.55) $delay;-ms-transition:all $time cubic-bezier(0.68,-0.55,0.265,1.55) $delay;-o-transition:all $time cubic-bezier(0.68,-0.55,0.265,1.55) $delay;transition:all $time cubic-bezier(0.68,-0.55,0.265,1.55) $delay;}
+@mixin rotate($deg){-moz-transform: rotate($deg);-ms-transform: rotate($deg);-webkit-transform: rotate($deg);-o-transform: rotate($deg);transform: rotate($deg);}
+@mixin scale($num){-moz-transform: scale($num);-ms-transform: scale($num);-webkit-transform: scale($num);-o-transform: scale($num);transform: scale($num);}
+@mixin skew($num){-webkit-transform: skewX($num);-moz-transform: skewX($num);-ms-transform: skewX($num);-o-transform: skewX($num);transform: skewX($num);}
+@mixin cnt($h){display: flex;flex-direction: column;height: $h;text-align: center;align-items: stretch;justify-content: center;}
+@mixin tr($x,$y,$z){transform: translate3d($x, $y, $z);};
+@mixin flexbox() {display: -webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: flex;}
+@mixin flexorder($val){-webkit-box-ordinal-group: $val;-moz-box-ordinal-group: $val;-ms-flex-order: $val;-webkit-order: $val;order: $val;}
+@mixin formInputBtn {
+    min-width: 350px;
+    min-height: 60px;
+    border-radius: 5px;
+    font-size: 20px;
+	border: 1px solid #ffffff;
+}
+@mixin formBtn {
+    color: #ffffff;
+    background-color: #ba271f;
+    border-radius: 5px;
+    font-size: 20px;
+	border: 1px solid #ffffff;
+}
+@mixin titleText {
+	color: #3e3e3e;
+	font-weight: 400;
+	font-family: "Open Sans";
+	text-align: center;
+}
+@mixin socialIcon {
+	width: 25px;
+	height: 25px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: white;
+	font-size: 15px;
+}
+@mixin socialIconFooter {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: white;
+	font-size: 30px;
+}
+//</МИКСИНЫ>===============================================================================================
+
+//<ШРИФТЫ>===============================================================================================
+
+//<Подключаем шрифты>=======================================================================================
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Open+Sans:wght@300;400;700&display=swap');
+//</Подключаем шрифты>=======================================================================================
+
+
+//<Шрифт по умолчанию>==========================================================================================
+
+//</Шрифт по умолчанию>==========================================================================================
+
+//</ШРИФТЫ>=======================================================================================================
+
+//<ПЕРЕМЕННЫЕ>===========================================================================================================
+$minwidth:320px;
+$mw:1110px;
+$md1:$mw+12px;
+$md2:992.98px;
+$md3:767.98px;
+$md4:550.98px;
+$md5:479.98px;
+$md6:405.98px;
+$md7:325.98px;
+
+//</ПЕРЕМЕННЫЕ>===========================================================================================================
+
+
+//<ОБОЛОНКА>===========================================================================================================
+.wrapper{width: 100%;min-height: 100%;overflow: hidden;
+	&.loaded{}
+}
+//</ОБОЛОНКА>===========================================================================================================
+
+//<ОСНОВНА СІТКА>===========================================================================================================
+._container{max-width:$mw;margin: 0 auto;width: 100%;
+	@media (max-width:$md1){max-width: 970px;padding:0 10px;}
+	@media (max-width:$md2){max-width: 750px;padding:0 10px;}
+	@media (max-width:$md3){max-width: 710;padding:0 10px;}
+	@media (max-width:$md4){max-width: 480px;padding:0 10px;}
+	@media (max-width:$md5){max-width: 420px;padding:0 10px;}
+	@media (max-width:$md6){max-width: 350px;padding:0 10px;}
+	@media (max-width:$md7){max-width: none;padding:0 10px;}
+	
+}
+//</ОСНОВНА СІТКА>===========================================================================================================
+
+//<ПІДКЛЮЧЕННЯ ФАЙЛІВ СТИЛІВ СТОРІНОК І ЕЛЕМЕНТІВ>====================================================================================================
+@import "_header.scss";
+@import "_footer.scss";
+@import "_normalize.scss";
+//</ПІДКЛЮЧЕННЯ ФАЙЛІВ СТИЛІВ СТОРІНОК І ЕЛЕМЕНТІВ>====================================================================================================
+
+//<ОСНОВНИЙ БЛОК>====================================================================================================
+
+.advantages__container {
+	margin-top: 50px;
+	h2{
+		font-size: 45px;
+		line-height: 30px;
+		color: #3e3e3e;
+		@include titleText;
+		text-align: center;
+		margin-bottom: 40px;
+	}
+	._first {
+		display: flex;
+	}
+	._second {
+		display: flex;
+	}
+	margin-bottom: 65px;
+}
+
+.advantages__cart__block {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	
+}
+
+.advantages__cart {
+	max-width: 348px;
+	text-align: center;
+
+	
+	h4{
+		font-size: 30px;
+		@include titleText;
+		margin-top: 15px;
+	}
+	p{
+		margin-top: 25px;
+		font-size: 15px;
+		@include titleText;
+		line-height: 30px;
+	}
+}
+.lyre__filled {
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+	margin-top: -65px;
+}
+@media (max-width: $md1) {
+	.lyre__filled {
+		margin-top: 30px;
+	}
+}
+
+@media (max-width: $md5) {
+	.advantages__container ._first, ._second{
+		flex-direction: column;
+	}
+	.advantages__cart{
+		margin-top: 30px;
+	}
+	.lyre__filled{
+		margin-top: 40px;
+		margin-bottom: 20px;
+	}
+}
+
+
+///////////////////////////////////
+
+
+
+.courses__container {
+	background-color: #f0f0f0;
+	padding-top: 20px;
+	padding-bottom: 45px;
+
+	.courses__container-title__text{
+		h2{
+			font-size: 45px;
+			line-height: 30px;
+			@include titleText;
+		}
+		p{
+			font-size: 25px;
+			line-height: 43px;
+			@include titleText;
+			margin-top:30px;
+		}
+	}
+}
+
+.courses__grid-card__block {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(400px,1fr));
+	gap:20px;
+	margin-top: 24px;
+}
+.courses__grid-card {
+	display: flex;
+	justify-content: space-around;
+	max-width:540px;
+	background-color: #e8e8e8;
+	padding: 20px 0;
+	
+	.grid-card-info {
+		max-width: 240px;
+		h5{
+			font-size: 25px;
+			line-height: 34px;
+			@include titleText;
+		}
+		p{
+			font-size: 17px;
+			line-height: 30px;
+			color: #3e3e3e;
+			font-weight: 400;
+			font-family: "Lato";
+		}
+		a{
+			font-size: 17px;
+			color: #f196a6;
+			font-weight: 400;
+			font-family: "Lato";
+		}
+		button{
+			padding: 11px;
+			background-color: #ba271f;
+			border: 1px solid #ffffff;
+			float: right;
+			font-size: 10px;
+			line-height: 2px;
+			color: #ffffff;
+			font-weight: 400;
+			font-family: "Open Sans";
+			margin-top: 35px;
+		}
+	}
+	.grid-card-img img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		top: 0;
+		left: 0;
+	}
+}
+@media (max-width: $md1) {
+	.courses__grid-card__block {
+		justify-items: center;
+		.courses__grid-card{
+			padding: 20px 20px;
+		}
+	}
+}
+
+@media (max-width: $md3) {
+	.courses__grid-card {
+		.grid-card-info {
+			button{
+				float: none;
+			}
+		}
+	}
+}
+
+
+@media (max-width: $md5) {
+	.courses__grid-card {
+		.grid-card-img{
+			display: none;
+		}
+
+		.grid-card-info {
+			button{
+				margin-left:40px;
+			}
+	   }
+	}
+}
+
+@media (max-width: $md6) {
+	.courses__container{
+		.courses__container-title__text{
+			h2{
+				font-size: 30px;
+			}
+		}
+	}
+	.courses__grid-card__block{
+		.courses__grid-card {
+			margin-left: -65px;
+		}
+	}
+
+}
+@media (max-width: $md7) {
+	.courses__grid-card__block{
+		.courses__grid-card {
+			margin-left: -50px;
+			margin-right: 50px;
+		}
+	}
+
+}
+
+////////////////////////////////////////////////////
+
+.slidder__container {
+	max-width: 1280px;
+	margin: 0 auto;
+	position: relative;
+}
+
+.block {
+	display: flex;
+}
+.block__side {
+	flex: 0 0 300px;
+	background-color: #77608d;
+}
+.block__body {
+	padding: 0px 0px 0px 30px;
+	flex: 1 1 auto;
+	min-width: 0;
+}
+
+/* ------------------ */
+
+.image-slider {
+	overflow: hidden;
+	.swiper-slide {
+		height: 310px;
+	}
+
+	margin-top: 45px;
+	h2{
+		font-size: 45px;
+		line-height: 30px;
+		@include titleText;
+		margin-bottom: 35px;
+
+	}
+	.swiper-button-next, .swiper-button-prev{
+		width: 40px;
+	}
+}
+
+
+.image-slider__image {
+	text-align: center;
+	figcaption{
+		font-size: 25px;
+		margin-top: 26px;
+		@include titleText;
+	}
+}
+.image-slider__image img {
+	max-width: 100%;
+	height: 250px;
+}
+
+/* Стрелки */
+.image-slider .swiper-button-prev::after,
+.image-slider .swiper-button-next::after {
+	color: #ba271f;
+	width: 40px;
+	height: 40px;
+	border-radius: 20px;
+	background-color: rgba(255,255,255,0);
+	border: 2px solid #ba271f;
+	font-size: 25px;
+	
+	
+}
+.swiper-button-prev::after{
+	padding:6px 0px 0px 9px;
+}
+.swiper-button-next::after{
+	padding:6px 0px 0px 13px;
+}
+/* Пагинация */
+
+/* Буллеты */
+.image-slider .swiper-pagination-bullet {
+	width: 20px;
+	height: 20px;
+	line-height: 20px;
+	font-size: 14px;
+	background-color: #fff;
+}
+
+/* Фракция */
+.image-slider .swiper-pagination-fraction {
+	font-size: 20px;
+	color: #fff;
+}
+
+/* Прогрессбар */
+.image-slider .swiper-pagination-progressbar-fill {
+	background-color: #7a956b;
+}
+
+/* Скролл */
+.image-slider .swiper-scrollbar-drag {
+	cursor: pointer;
+	background-color: #7a956b;
+}
+@media (max-width: $md6) {
+	.image-slider{
+		h2{
+			font-size: 25px;
+		}
+		.swiper-button-prev, .swiper-button-next{
+			display: none;
+		}
+	}
+}
+
+
+/////////////////////////////////////////
+
+
+.promo__container {
+	display: flex;
+	height:400px;
+	position: relative;
+	margin-top:50px;
+	.promo__img-block{
+		width: 100%;
+		position: relative;
+		min-height: 400px;
+		background-image: url("../img/education.png");
+		background-position: 0 0;
+		background-repeat: no-repeat;
+		background-size: 100% 100%;
+	}
+	.promo__bg-block{
+		width: 100%;
+		position: relative;
+		min-height: 400px;
+		background-image: url("../img/BgPromo.png");
+		background-position: 0 0;
+		background-repeat: no-repeat;
+		background-size: 100% 100%;
+	}
+	.bg_block__info {
+		max-width: 460px;
+		top: 0;
+		position: absolute;
+		margin: 15px 0px 90px 80px;
+		h4{
+			font-size: 35px;
+			line-height: 30px;
+			color: #f5f5f5;
+			font-weight: 300;
+			font-family: "Open Sans";
+			text-align: center;
+			margin-bottom: 23px;
+			margin-top: 20px;
+		}
+		p{
+			font-size: 15px;
+			line-height: 28px;
+			color: #f1f1f2;
+			font-weight: 300;
+			font-family: "Lato";
+			max-width: 340px;
+		}
+	}
+	.bg_block__info-btn {
+		min-width: 260px;
+		min-height: 60px;
+		@include formBtn;
+		margin-top: 50px;
+	}
+}
+
+@media (max-width: $md2) {
+	.promo__container {
+		.promo__img-block img{
+			width: 100%;
+			height: 100%;
+		}
+		.bg_block__info{
+			margin: 15px 0 90px 10px;
+			padding-right:10px;
+		}
+	}
+}
+@media (max-width: $md4) {
+	.promo__container{
+		height: 100%;
+		.bg_block__info{
+			margin-top: 50px;
+			text-align: center;
+			p{
+				max-width: 100%;
+			}
+			margin-left: 50px;
+		}
+		display: block;
+	}
+}
+@media (max-width: $md6) {
+	.promo__container{
+		.bg_block__info{
+			margin-top: 20px;
+			margin-left: 20px;
+		}
+	}
+}
+//////////////////////////////
+
+.OurTeam__container {
+	margin-top: 40px;
+	h2{
+		font-size: 47px;
+		line-height: 24px;
+		@include titleText;
+	}
+}
+
+.OurTeam__block {
+margin-top:55px;
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(255px,255px));
+justify-content: space-between;
+
+}
+.OurTeam__card {
+	.card__info{
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		max-width: 185px;
+		margin: 0 auto;
+		color: #3e3e3e;
+		font-weight: 400;
+		h5{
+			font-size: 22px;
+			line-height: 14px;
+			margin-top:50px;
+			font-family: "Lato";
+		}
+		p{
+			font-size: 14px;
+			line-height: 22px;
+			margin-top: 18px;
+			font-family: "Lato";
+			font-weight: 400;
+		}
+	}
+	.cadr__social_block{
+		display: flex;
+		justify-content:center;
+		margin-top: 18px;
+		margin-bottom:55px;
+		.facebook{
+			background-color: #3a589b;
+			@include socialIcon;
+			margin-right: 22px;
+			
+		}
+		.twiter{
+			background-color: #0c86b9;
+			@include socialIcon;
+			margin-right: 22px;
+		}
+		.google{
+			background-color: #c62328;
+			@include socialIcon;
+			
+		}
+	}
+}
+
+@media (max-width: $md2) {
+	.OurTeam__card{
+		margin-bottom: 20px;
+	}
+}
+
+@media (max-width: $md4) {
+	.OurTeam__block{
+		justify-content: center;
+	}
+}
+@media (max-width: $md7) {
+	.OurTeam__container{
+		h2{
+			font-size: 35px;
+		}
+	}
+}
+
+//////////////////////////
+
+.form__input-reg._error{
+    border: 2px solid red;
+}
+
+.registration__form__container {
+	background-color: #b4a084;
+	width: 100%;
+	padding-top: 25px;
+	h2{
+		font-size: 60px;
+		@include titleText;
+		color: #f3f3f3;
+	}
+	p{
+		font-size: 25px;
+		@include titleText;
+		line-height: 43px;
+		color: #f3f3f3;
+	}
+}
+
+
+.form__body-reg {
+	display: flex;
+	flex-direction: column;
+	justify-content:center;
+	align-items: center;
+	margin-top: 15px;
+
+
+	.form__input-reg {
+		min-width: 545px;
+		min-height: 65px;
+		padding-left: 10px;
+		margin-bottom: 30px;
+		font-size: 25px;
+		line-height: 43px;
+		color: #ababab;
+		font-weight: 400;
+		font-family: "Lato";
+	}
+	.form__button-reg {
+		padding: 10px 44px;
+		background-color:#ba271f;
+		font-size: 25px;
+		line-height: 43px;
+		color: #ffffff;
+		font-weight: 400;
+		font-family: "Lato";
+		text-align: center;
+		margin-bottom:60px;
+	}
+}
+
+@media (max-width: $md4) {
+	.form__body-reg {
+		.form__input-reg{
+			min-width: 400px;
+		}
+	}
+	.registration__form__container {
+		h2{
+			font-size: 40px;
+		}
+	}
+}
+
+@media (max-width: $md5) {
+	.form__body-reg{
+		.form__input-reg{
+			min-width: 250px;
+		}
+	}
+	.registration__form__container {
+		h2{
+			font-size: 30px;
+			margin-bottom:15px;
+		}
+	}
+}
